@@ -10,10 +10,10 @@ import tweepy, time
 
 #enter the corresponding information from your Twitter application:
 
-CONSUMER_KEY = '' #keep the quotes, enter your consumer key
-CONSUMER_SECRET = ''#keep the quotes, enter your consumer secret key
-ACCESS_KEY = ''#keep the quotes, enter your access token
-ACCESS_SECRET =  ''#keep the quotes, enter your access token secret
+CONSUMER_KEY = 'UeP2AalTDFKHPyLav70Lmi1Zx' #keep the quotes, enter your consumer key
+CONSUMER_SECRET = '9zwnGkYGVfieUIxJfc6i55vWd3WegFMlSKmK8AsCcpNLI0d3Rw'#keep the quotes, enter your consumer secret key
+ACCESS_KEY = '885340635854753793-5XDrIQmk1mnoOoslMnnx01k6I74nxOD'#keep the quotes, enter your access token
+ACCESS_SECRET =  'AqB2R8jCRs9us7cXzIc7jJp8yZYM7ALJxU1XslFDT14OR'#keep the quotes, enter your access token secret
 
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
@@ -35,9 +35,9 @@ def search(twts):
         # Retweets
         try:
             api.retweet(i.id)
-            print "JUST RETWEETED " + (i.text)
+            print ("JUST RETWEETED " + (i.text))
         except:
-            print "Hm... Something went wrong.\nYou've probably already retweeted this."
+            print ("Hm... Something went wrong.\nYou've probably already retweeted this.")
         # Follows
         if "follow" in i.text or "Follow" in i.text or "FOLLOW" in i.text:
             # This part follows the actual contest-holder, instead of some random person who retweeted their contest
@@ -48,32 +48,32 @@ def search(twts):
                 splittext = (tweet).split(":")
                 username = str(splittext[0]).replace("@", "")
                 api.create_friendship(username)
-                print "JUST FOLLOWED " + (username)
+                print ("JUST FOLLOWED " + (username))
             else:
                 username = i.user.screen_name
                 api.create_friendship(username)
-                print "JUST FOLLOWED " + str(username)
+                print ("JUST FOLLOWED " + str(username))
 
         # This next part favorites tweets if it has to
         if "fav" in i.text or "Fav" in i.text or "FAV" in i.text:
             api.create_favorite(i.id)
-            print "JUST FAVORITED " + (i.text)
+            print ("JUST FAVORITED " + (i.text))
         # This part waits a minute before moving onto the next one.
         time.sleep(60)
 
 
 def run():
     for key in ["RT to win", "retweet to win"]:
-        print "************************"
-        print "\n...Refreshing searched tweets...\n"
-        print "************************"
+        print ("************************")
+        print ("\n...Refreshing searched tweets...\n")
+        print ("************************")
         search(api.search(q=key))
 
 
 if __name__ == '__main__':
-    print "Thank you for using my twitter contest-entering bot.\nConsider leaving a star if you like it."
-    print "https://github.com/robbiebarrat/twitter-contest-enterer\n"
-    print "Also -- if you run this for too long it will get your account suspended. I'd suggest using it on a 'test account'" \
-          "\nand only letting it run for a short time every day."
+    print ("Thank you for using my twitter contest-entering bot.\nConsider leaving a star if you like it.")
+    print ("https://github.com/robbiebarrat/twitter-contest-enterer\n")
+    print ("Also -- if you run this for too long it will get your account suspended. I'd suggest using it on a 'test account'" \
+          "\nand only letting it run for a short time every day.")
     while True:
         run()
