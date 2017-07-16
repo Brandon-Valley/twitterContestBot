@@ -59,7 +59,7 @@ def search(twts):
             api.create_favorite(i.id)
             print ("JUST FAVORITED " + (i.text))
         # This part waits a minute before moving onto the next one.
-        time.sleep(60)
+        time.sleep(60)#could this be 10 sec?
 
 
 def run():
