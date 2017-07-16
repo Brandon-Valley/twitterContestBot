@@ -35,7 +35,9 @@ auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
 
-#keyword lists - only looks at .lower()
+
+
+
 rtKeywords = ["rt to", "rt and win", "retweet and win",
               "rt for", "rt 4", "retweet to"]
 
@@ -44,11 +46,32 @@ followKeywords = ['follow']
 favKeywords = ['fav']
 
 bannedwords = ["vote"]
+ 
+knownBotSpoters = ['nirvana_wright', 'B0tSp0tterB0t', 'followandrt2win', 'Shart_ebooks',
+                   '@botfinder_g', 'B0TTT0M', '_aekkaphon']
 
 
+
+def knownBotSpoter(i):
+    # get username - check the actual contest-holder, instead of some random person who retweeted their contest
+    tweet = i.text
+    if tweet[0:3] == "RT ":
+        tweet = tweet[3:]
+    if tweet[0] == "@":
+        splittext = (tweet).split(":")
+        username = str(splittext[0]).replace("@", "")
+    else:
+        username = i.user.screen_name
+    #check if OG poster is a known bot spotter
+    for knownBotSpoterUsername in knownBotSpoters:
+        if username == knownBotSpoterUsername:
+            return True
+    return False
+    
+    
 def search(twts):
     for i in twts:
-        if not any(k in i.text.lower() for k in rtKeywords) or any(k in i.text.lower() for k in bannedwords):
+        if not any(k in i.text.lower() for k in rtKeywords) or any(k in i.text.lower() for k in bannedwords or knownBotSpoter(i)):
             continue
         # Retweets
         try:
