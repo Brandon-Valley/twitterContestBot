@@ -10,6 +10,7 @@ import time
 #add ability to tag friends
 #split stuff up for multiple bot usage
 #maybe add something so even if you rt a new contest, if you are already follow them, dont follow again - is this a real problem???
+#once it can run for a day - make it write the time/other data to exel sheet and set it up to graph stuff like rt's per hour to see most active times each day
 
 
 #enter the corresponding information from your Twitter application:
@@ -40,6 +41,8 @@ def search(twts):
         try:
             api.retweet(i.id)
             print ("JUST RETWEETED " + (i.text))
+            print('TEST- i.text:', i.text)#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            print('TEST- i.text.lower():', i.text.lower())#!!!!!!!!!!!!!!!!!!!!!!!!!
         except:
             print ("Hm... Something went wrong. - probably already retweeted this.")
         # Follows
@@ -62,7 +65,7 @@ def search(twts):
         if any(k in i.text for k in favKeywords):
             api.create_favorite(i.id)
             print ("JUST FAVORITED " + (i.text))
-        # This part waits a minute before moving onto the next one.
+        # This part waits a bit before moving onto the next one.
         time.sleep(10)#could this be 10 sec? - used to be 60 - get me suspended????
 
 
