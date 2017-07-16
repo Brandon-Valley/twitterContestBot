@@ -1,15 +1,18 @@
-author__ = 'Robbie Barrat'
+# big thanks to Robbie Barrat for writing some helpful code and github user 'timster' for optimizing a lot of rough bits
+import tweepy
+import time
 
-# I'd like to give github user 'timster' credit for optimizing a lot of rough bits in the code, he's helped a lot.
+#stuff to do:
+#make it stop following bot spotters
+#make it follow any other user mentioned in a tweet
+#fix misc errors
+#play with timer speed
+#add ability to tag friends
+#split stuff up for multiple bot usage
 
-# This was a quick project. Inspired by a story I heard of on the news where a guy did something almost exactly the same
-#  and won a bunch of stuff. I couldn't find the code that that guy used (I don't think he wanted to release it), so I
-# wrote this. Have fun.
 
-import tweepy, time
 
 #enter the corresponding information from your Twitter application:
-
 CONSUMER_KEY = 'UeP2AalTDFKHPyLav70Lmi1Zx' #keep the quotes, enter your consumer key
 CONSUMER_SECRET = '9zwnGkYGVfieUIxJfc6i55vWd3WegFMlSKmK8AsCcpNLI0d3Rw'#keep the quotes, enter your consumer secret key
 ACCESS_KEY = '885340635854753793-5XDrIQmk1mnoOoslMnnx01k6I74nxOD'#keep the quotes, enter your access token
