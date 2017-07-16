@@ -9,7 +9,7 @@ import time
 #play with timer speed
 #add ability to tag friends
 #split stuff up for multiple bot usage
-
+#maybe add something so even if you rt a new contest, if you are already follow them, dont follow again - is this a real problem???
 
 
 #enter the corresponding information from your Twitter application:
@@ -25,7 +25,12 @@ api = tweepy.API(auth)
 rtKeywords = ["rt to", "rt and win", "retweet and win",
               "rt for", "rt 4", "retweet to"]
 
+followKeywords = ['follow', 'Follow', 'FOLLOW']
+
+favKeywords = ['fav', 'Fav', 'FAV']
+
 bannedwords = ["vote"]
+
 
 def search(twts):
     for i in twts:
@@ -36,9 +41,9 @@ def search(twts):
             api.retweet(i.id)
             print ("JUST RETWEETED " + (i.text))
         except:
-            print ("Hm... Something went wrong.\nYou've probably already retweeted this.")
+            print ("Hm... Something went wrong. - probably already retweeted this.")
         # Follows
-        if "follow" in i.text or "Follow" in i.text or "FOLLOW" in i.text:
+        if any(k in i.text for k in followKeywords):
             # This part follows the actual contest-holder, instead of some random person who retweeted their contest
             tweet = i.text
             if tweet[0:3] == "RT ":
@@ -54,11 +59,11 @@ def search(twts):
                 print ("JUST FOLLOWED " + str(username))
 
         # This next part favorites tweets if it has to
-        if "fav" in i.text or "Fav" in i.text or "FAV" in i.text:
+        if any(k in i.text for k in favKeywords):
             api.create_favorite(i.id)
             print ("JUST FAVORITED " + (i.text))
         # This part waits a minute before moving onto the next one.
-        time.sleep(60)#could this be 10 sec?
+        time.sleep(10)#could this be 10 sec? - used to be 60 - get me suspended????
 
 
 def run():
