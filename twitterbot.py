@@ -11,7 +11,9 @@ import time
 #split stuff up for multiple bot usage
 #maybe add something so even if you rt a new contest, if you are already follow them, dont follow again - is this a real problem???
 #once it can run for a day - make it write the time/other data to exel sheet and set it up to graph stuff like rt's per hour to see most active times each day
-
+#what do they mean my "show proof"?  need to make something for this???
+#why isnt that list of "keys" in run the same as rtKeywords?  am i missing out on searches or avoiding bad ones? need to change???
+#add check for "RT+F", RT&F
 
 #enter the corresponding information from your Twitter application:
 CONSUMER_KEY = 'UeP2AalTDFKHPyLav70Lmi1Zx' #keep the quotes, enter your consumer key
@@ -23,12 +25,13 @@ auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
 
+#keyword lists - only looks at .lower()
 rtKeywords = ["rt to", "rt and win", "retweet and win",
               "rt for", "rt 4", "retweet to"]
 
-followKeywords = ['follow', 'Follow', 'FOLLOW']
+followKeywords = ['follow']
 
-favKeywords = ['fav', 'Fav', 'FAV']
+favKeywords = ['fav']
 
 bannedwords = ["vote"]
 
@@ -41,13 +44,12 @@ def search(twts):
         try:
             api.retweet(i.id)
             print ("JUST RETWEETED " + (i.text))
-            print('TEST- i.text:', i.text)#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             print('TEST- i.text.lower():', i.text.lower())#!!!!!!!!!!!!!!!!!!!!!!!!!
         except:
             print ("Hm... Something went wrong. - probably already retweeted this.")
         # Follows
-        if any(k in i.text for k in followKeywords):
-            # This part follows the actual contest-holder, instead of some random person who retweeted their contest
+        if any(k in i.text.lower() for k in followKeywords):
+            # follow the actual contest-holder, instead of some random person who retweeted their contest
             tweet = i.text
             if tweet[0:3] == "RT ":
                 tweet = tweet[3:]
@@ -60,12 +62,14 @@ def search(twts):
                 username = i.user.screen_name
                 api.create_friendship(username)
                 print ("JUST FOLLOWED " + str(username))
+            #follows 
 
-        # This next part favorites tweets if it has to
-        if any(k in i.text for k in favKeywords):
+        # favorites tweets if needed
+        if any(k in i.text.lower() for k in favKeywords):
             api.create_favorite(i.id)
             print ("JUST FAVORITED " + (i.text))
-        # This part waits a bit before moving onto the next one.
+            
+        # waits a bit before moving onto the next one.
         time.sleep(10)#could this be 10 sec? - used to be 60 - get me suspended????
 
 
