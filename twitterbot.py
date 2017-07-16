@@ -22,18 +22,14 @@ auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
 
-keywords = [
-    "rt to", "rt and win", "retweet and win",
-    "rt for", "rt 4", "retweet to"
-]
+rtKeywords = ["rt to", "rt and win", "retweet and win",
+              "rt for", "rt 4", "retweet to"]
 
-bannedwords = [
-    "vote"
-]
+bannedwords = ["vote"]
 
 def search(twts):
     for i in twts:
-        if not any(k in i.text.lower() for k in keywords) or any(k in i.text.lower() for k in bannedwords):
+        if not any(k in i.text.lower() for k in rtKeywords) or any(k in i.text.lower() for k in bannedwords):
             continue
         # Retweets
         try:
@@ -74,9 +70,8 @@ def run():
 
 
 if __name__ == '__main__':
-    print ("Thank you for using my twitter contest-entering bot.\nConsider leaving a star if you like it.")
-    print ("https://github.com/robbiebarrat/twitter-contest-enterer\n")
-    print ("Also -- if you run this for too long it will get your account suspended. I'd suggest using it on a 'test account'" \
+    print ("reminder -- if you run this for too long it will get your account suspended. I'd suggest using it on a 'test account'" \
           "\nand only letting it run for a short time every day.")
+    print('starting twitter bot...')
     while True:
         run()
