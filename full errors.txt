@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "C:\Users\Brandon\Documents\Personal Projects\twitterContestBot\twitterbot.py", line 89, in <module>
+    run()
+  File "C:\Users\Brandon\Documents\Personal Projects\twitterContestBot\twitterbot.py", line 81, in run
+    search(api.search(q=key))
+  File "C:\Users\Brandon\Documents\Personal Projects\twitterContestBot\twitterbot.py", line 69, in search
+    api.create_favorite(i.id)
+  File "C:\Users\Brandon\AppData\Local\Programs\Python\Python35-32\lib\tweepy\binder.py", line 250, in _call
+    return method.execute()
+  File "C:\Users\Brandon\AppData\Local\Programs\Python\Python35-32\lib\tweepy\binder.py", line 234, in execute
+    raise TweepError(error_msg, resp, api_code=api_error_code)
+tweepy.error.TweepError: [{'code': 139, 'message': 'You have already favorited this status.'}]

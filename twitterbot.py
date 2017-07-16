@@ -2,6 +2,14 @@
 import tweepy
 import time
 
+
+
+def makeAfuss():
+    numLines = 20
+    bigStr = '*******************************************'
+    for x in range(numLines):
+        print(bigStr)
+        
 #stuff to do:
 #make it stop following bot spotters
 #make it follow any other user mentioned in a tweet
@@ -13,7 +21,9 @@ import time
 #once it can run for a day - make it write the time/other data to exel sheet and set it up to graph stuff like rt's per hour to see most active times each day
 #what do they mean my "show proof"?  need to make something for this???
 #why isnt that list of "keys" in run the same as rtKeywords?  am i missing out on searches or avoiding bad ones? need to change???
-#add check for "RT+F", RT&F
+#add check for "RT+F", RT&F, FLW & RT, #FLW us both & #RT, (heart emoji) + RT
+#add bot-spoter detection
+#add false positive thing
 
 #enter the corresponding information from your Twitter application:
 CONSUMER_KEY = 'UeP2AalTDFKHPyLav70Lmi1Zx' #keep the quotes, enter your consumer key
@@ -44,7 +54,7 @@ def search(twts):
         try:
             api.retweet(i.id)
             print ("JUST RETWEETED " + (i.text))
-            print('TEST- i.text.lower():', i.text.lower())#!!!!!!!!!!!!!!!!!!!!!!!!!
+            #print('TEST- i.text.lower():', i.text.lower())#!!!!!!!!!!!!!!!!!!!!!!!!!
         except:
             print ("Hm... Something went wrong. - probably already retweeted this.")
         # Follows
@@ -66,19 +76,25 @@ def search(twts):
 
         # favorites tweets if needed
         if any(k in i.text.lower() for k in favKeywords):
-            api.create_favorite(i.id)
-            print ("JUST FAVORITED " + (i.text))
+            try:
+                api.create_favorite(i.id)
+                print ("JUST FAVORITED " + (i.text))
+            except:
+                print('error catch -- just skipped over a "you already favorited this status" error')
+
+   
             
         # waits a bit before moving onto the next one.
         time.sleep(10)#could this be 10 sec? - used to be 60 - get me suspended????
 
 
 def run():
-    for key in ["RT to win", "retweet to win"]:
+    for key in ["RT to win", "retweet to win"]:#why isnt this the same as rtKeywords?????????????
         print ("************************")
         print ("\n...Refreshing searched tweets...\n")
         print ("************************")
         search(api.search(q=key))
+        
 
 
 if __name__ == '__main__':
