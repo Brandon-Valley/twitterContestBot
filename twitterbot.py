@@ -48,11 +48,11 @@ favKeywords = ['fav']
 bannedwords = ["vote"]
  
 knownBotSpoters = ['nirvana_wright', 'B0tSp0tterB0t', 'followandrt2win', 'Shart_ebooks',
-                   '@botfinder_g', 'B0TTT0M', '_aekkaphon']
+                   'botfinder_g', 'B0TTT0M', '_aekkaphon']
 
-KnownTweepyErrors = ["code': 108, 'message': 'Cannot find specified user.",
-                "'message': 'You have already favorited this status.', 'code': 139}",
-                "code': 139, 'message': 'You have already favorited this status."]
+knownTweepyErrors = ["code': 108, 'message': 'Cannot find specified user.",
+                     "'message': 'You have already favorited this status.', 'code': 139}",
+                     "code': 139, 'message': 'You have already favorited this status."]
 
 
 
@@ -67,15 +67,18 @@ def knownBotSpoter(i):
     else:
         username = i.user.screen_name
     #check if OG poster is a known bot spotter
+    print('checking if knownBotSpoter  username:', username)
     for knownBotSpoterUsername in knownBotSpoters:
         if username == knownBotSpoterUsername:
+            #makeAfuss()#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            print('GOTCHA! -- Just spotted a knownBotSpoter:', username)#!!!!!!!!
             return True
     return False
     
     
 def search(twts):
     for i in twts:
-        if not any(k in i.text.lower() for k in rtKeywords) or any(k in i.text.lower() for k in bannedwords or knownBotSpoter(i)):
+        if not any(k in i.text.lower() for k in rtKeywords) or any(k in i.text.lower() for k in bannedwords) or (knownBotSpoter(i)):
             continue
         # Retweets
         try:
