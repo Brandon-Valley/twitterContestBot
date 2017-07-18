@@ -11,7 +11,6 @@ def makeAfuss():
         print(bigStr)
         
 #stuff to do:
-#make it stop following bot spotters
 #make it follow any other user mentioned in a tweet
 #fix misc errors
 #play with timer speed
@@ -24,6 +23,7 @@ def makeAfuss():
 #add check for "RT+F", RT&F, FLW & RT, #FLW us both & #RT, (heart emoji) + RT
 #add bot-spoter detection
 #add false positive thing
+#what happens if you aouto block anyone who retweets something from a known bot spoter ie infirior bots? - preformance increace?
 
 #enter the corresponding information from your Twitter application:
 CONSUMER_KEY = 'UeP2AalTDFKHPyLav70Lmi1Zx' #keep the quotes, enter your consumer key
@@ -49,6 +49,10 @@ bannedwords = ["vote"]
  
 knownBotSpoters = ['nirvana_wright', 'B0tSp0tterB0t', 'followandrt2win', 'Shart_ebooks',
                    '@botfinder_g', 'B0TTT0M', '_aekkaphon']
+
+KnownTweepyErrors = ["code': 108, 'message': 'Cannot find specified user.",
+                "'message': 'You have already favorited this status.', 'code': 139}",
+                "code': 139, 'message': 'You have already favorited this status."]
 
 
 
@@ -99,25 +103,31 @@ def search(twts):
 
         # favorites tweets if needed
         if any(k in i.text.lower() for k in favKeywords):
-            try:
-                api.create_favorite(i.id)
-                print ("JUST FAVORITED " + (i.text))
-            except:
-                print('error catch -- just skipped over a "you already favorited this status" error')
-
-   
-            
+           # try:#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+         api.create_favorite(i.id)
+#                 print ("JUST FAVORITED " + (i.text))
+#             except:
+#                 print('error catch -- just skipped over a "you already favorited this status" error')
         # waits a bit before moving onto the next one.
         time.sleep(10)#could this be 10 sec? - used to be 60 - get me suspended????
 
 
-def run():
-    for key in ["RT to win", "retweet to win"]:#why isnt this the same as rtKeywords?????????????
-        print ("************************")
-        print ("\n...Refreshing searched tweets...\n")
-        print ("************************")
-        search(api.search(q=key))
-        
+def run():#clean this up!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    try:
+        for key in ["RT to win", "retweet to win"]:#why isnt this the same as rtKeywords?????????????
+            print ("************************")
+            print ("\n...Refreshing searched tweets...\n")
+            print ("************************")
+            search(api.search(q=key))
+    except tweepy.TweepError as e:
+        if e in knownTweepyErrors:
+            makeAfuss()
+            print('error catch -- tweepy error  -- %s -- restarting twitterbot', e.message)
+            run()
+    except UnicodeEncodeError as e:
+        makeAfuss() 
+        print('error catch -- UnicodeEncoderError -- %s -- restarting twitterbot', e.message)
+        run()
 
 
 if __name__ == '__main__':
