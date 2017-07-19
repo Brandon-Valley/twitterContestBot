@@ -24,6 +24,10 @@ def makeAfuss():
 #add bot-spoter detection
 #add false positive thing
 #what happens if you aouto block anyone who retweets something from a known bot spoter ie infirior bots? - preformance increace?
+#When you establish your API instance include the wait_on_rate_limit parameter (The docs show, it defaults to False). You can also add the notify parameter so you know when you're approaching the limit. http://docs.tweepy.org/en/latest/api.html
+#look into wait_on_rate_limit
+#add ability to like - does like mean favorite?
+
 
 #enter the corresponding information from your Twitter application:
 CONSUMER_KEY = 'UeP2AalTDFKHPyLav70Lmi1Zx' #keep the quotes, enter your consumer key
@@ -50,7 +54,7 @@ bannedwords = ["vote"]
 knownBotSpoters = ['nirvana_wright', 'B0tSp0tterB0t', 'followandrt2win', 'Shart_ebooks',
                    'botfinder_g', 'B0TTT0M', '_aekkaphon', 'RealBotSp0tter', 'b0ttt0m', 
                    'jflessauSpam', 'b0ttem', 'BotSp0tterBot', 'bottybotbotl', 
-                   'RealBotSpotter' ]
+                   'RealBotSpotter', 'bottybotbotl' ]
 
 knownTweepyErrors = ["code': 108, 'message': 'Cannot find specified user.",
                      "'message': 'You have already favorited this status.', 'code': 139}",
