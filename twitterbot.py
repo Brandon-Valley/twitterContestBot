@@ -48,7 +48,9 @@ favKeywords = ['fav']
 bannedwords = ["vote"]
  
 knownBotSpoters = ['nirvana_wright', 'B0tSp0tterB0t', 'followandrt2win', 'Shart_ebooks',
-                   'botfinder_g', 'B0TTT0M', '_aekkaphon']
+                   'botfinder_g', 'B0TTT0M', '_aekkaphon', 'RealBotSp0tter', 'b0ttt0m', 
+                   'jflessauSpam', 'b0ttem', 'BotSp0tterBot', 'bottybotbotl', 
+                   'RealBotSpotter' ]
 
 knownTweepyErrors = ["code': 108, 'message': 'Cannot find specified user.",
                      "'message': 'You have already favorited this status.', 'code': 139}",
@@ -67,7 +69,7 @@ def knownBotSpoter(i):
     else:
         username = i.user.screen_name
     #check if OG poster is a known bot spotter
-    print('checking if knownBotSpoter  username:', username)
+    #print('checking if knownBotSpoter  username:', username)#!!!!!!!!!!!!!!!!!!!!
     for knownBotSpoterUsername in knownBotSpoters:
         if username == knownBotSpoterUsername:
             #makeAfuss()#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -116,6 +118,7 @@ def search(twts):
 
 
 def run():#clean this up!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    
     try:
         for key in ["RT to win", "retweet to win"]:#why isnt this the same as rtKeywords?????????????
             print ("************************")
@@ -124,11 +127,11 @@ def run():#clean this up!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             search(api.search(q=key))
     except tweepy.TweepError as e:
         if e in knownTweepyErrors:
-            makeAfuss()
+            makeAfuss()#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             print('error catch -- tweepy error  -- %s -- restarting twitterbot', e.message)
             run()
     except UnicodeEncodeError as e:
-        makeAfuss() 
+        makeAfuss() #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         print('error catch -- UnicodeEncoderError -- %s -- restarting twitterbot', e.message)
         run()
 
