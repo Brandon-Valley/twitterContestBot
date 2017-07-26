@@ -56,7 +56,7 @@ knownBotSpoters = ['nirvana_wright', 'B0tSp0tterB0t', 'followandrt2win', 'Shart_
                    'botfinder_g', 'B0TTT0M', '_aekkaphon', 'RealBotSp0tter', 'b0ttt0m', 
                    'jflessauSpam', 'b0ttem', 'BotSp0tterBot', 'bottybotbotl', 
                    'RealBotSpotter', 'bottybotbotl', 'RealB0tSpotter', 'BotSpotterBot',
-                   'bottybotbotl']
+                   'bottybotbotl', 'jflessauSpam', 'lvbroadcasting' ]
 
 knownTweepyErrors = ["code': 108, 'message': 'Cannot find specified user.",
                      "'message': 'You have already favorited this status.', 'code': 139}",
