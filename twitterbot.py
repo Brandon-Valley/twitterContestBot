@@ -27,6 +27,7 @@ def makeAfuss():
 #When you establish your API instance include the wait_on_rate_limit parameter (The docs show, it defaults to False). You can also add the notify parameter so you know when you're approaching the limit. http://docs.tweepy.org/en/latest/api.html
 #look into wait_on_rate_limit
 #add ability to like - does like mean favorite?
+#how to turn on notifications??? what does this mean?????
 
 
 #enter the corresponding information from your Twitter application:
@@ -54,7 +55,8 @@ bannedwords = ["vote"]
 knownBotSpoters = ['nirvana_wright', 'B0tSp0tterB0t', 'followandrt2win', 'Shart_ebooks',
                    'botfinder_g', 'B0TTT0M', '_aekkaphon', 'RealBotSp0tter', 'b0ttt0m', 
                    'jflessauSpam', 'b0ttem', 'BotSp0tterBot', 'bottybotbotl', 
-                   'RealBotSpotter', 'bottybotbotl' ]
+                   'RealBotSpotter', 'bottybotbotl', 'RealB0tSpotter', 'BotSpotterBot',
+                   'bottybotbotl']
 
 knownTweepyErrors = ["code': 108, 'message': 'Cannot find specified user.",
                      "'message': 'You have already favorited this status.', 'code': 139}",
