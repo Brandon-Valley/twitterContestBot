@@ -31,10 +31,10 @@ def makeAfuss():
 
 
 #enter the corresponding information from your Twitter application:
-CONSUMER_KEY = 'MEpbDNplsX724pFmaKtTjlMFW' #keep the quotes, enter your consumer key
-CONSUMER_SECRET = 'BEIyPrCYzWe8X65fArKE65cXAkLtyUd8RAYlLllHrw4ubiND9T'#keep the quotes, enter your consumer secret key
-ACCESS_KEY = '932834480406122497-kEdX6h2yZ7ocWhEgVznG22My7qbeLx5'#keep the quotes, enter your access token
-ACCESS_SECRET =  '0hjm4BHFfCiHgNwNVccNw66puL0ZN22hwGinrtdjrW2d6'#keep the quotes, enter your access token secret
+CONSUMER_KEY = 'UeP2AalTDFKHPyLav70Lmi1Zx' #keep the quotes, enter your consumer key
+CONSUMER_SECRET = '9zwnGkYGVfieUIxJfc6i55vWd3WegFMlSKmK8AsCcpNLI0d3Rw'#keep the quotes, enter your consumer secret key
+ACCESS_KEY = '885340635854753793-5XDrIQmk1mnoOoslMnnx01k6I74nxOD'#keep the quotes, enter your access token
+ACCESS_SECRET =  'AqB2R8jCRs9us7cXzIc7jJp8yZYM7ALJxU1XslFDT14OR'#keep the quotes, enter your access token secret
 
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)

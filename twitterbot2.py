@@ -31,10 +31,10 @@ def makeAfuss():
 
 
 #enter the corresponding information from your Twitter application:
-CONSUMER_KEY = 'MEpbDNplsX724pFmaKtTjlMFW' #keep the quotes, enter your consumer key
-CONSUMER_SECRET = 'BEIyPrCYzWe8X65fArKE65cXAkLtyUd8RAYlLllHrw4ubiND9T'#keep the quotes, enter your consumer secret key
-ACCESS_KEY = '932834480406122497-kEdX6h2yZ7ocWhEgVznG22My7qbeLx5'#keep the quotes, enter your access token
-ACCESS_SECRET =  '0hjm4BHFfCiHgNwNVccNw66puL0ZN22hwGinrtdjrW2d6'#keep the quotes, enter your access token secret
+CONSUMER_KEY = 'wRVSTKYDJWCHFmagYg8qhZQwF' #keep the quotes, enter your consumer key
+CONSUMER_SECRET = 'zGSRwPz9w3SpPW1XWoyurJMxU1Rqk9vg1vD0dOVw64N8u278Ss'#keep the quotes, enter your consumer secret key
+ACCESS_KEY = '890052028675784000aHiBYsLVMFbyWxzvU1oEndDY5Pjx641'#keep the quotes, enter your access token
+ACCESS_SECRET =  'ZSWgsMuQRFY1zzPjB8HNAWyWFzrBqD69gN2E687NJsP90'#keep the quotes, enter your access token secret
 
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
@@ -56,7 +56,7 @@ knownBotSpoters = ['nirvana_wright', 'B0tSp0tterB0t', 'followandrt2win', 'Shart_
                    'botfinder_g', 'B0TTT0M', '_aekkaphon', 'RealBotSp0tter', 'b0ttt0m', 
                    'jflessauSpam', 'b0ttem', 'BotSp0tterBot', 'bottybotbotl', 
                    'RealBotSpotter', 'bottybotbotl', 'RealB0tSpotter', 'BotSpotterBot',
-                   'bottybotbotl', 'jflessauSpam', 'lvbroadcasting' ]
+                   'bottybotbotl', 'jflessauSpam', 'lvbroadcasting', 'KyIiecosmeticz' ]
 
 knownTweepyErrors = ["code': 108, 'message': 'Cannot find specified user.",
                      "'message': 'You have already favorited this status.', 'code': 139}",
