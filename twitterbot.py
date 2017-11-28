@@ -47,9 +47,9 @@ api = tweepy.API(auth)
 rtKeywords = ["rt to", "rt and win", "retweet and win",
               "rt for", "rt 4", "retweet to"]
 
-followKeywords = ['follow']
+followKeywords = ['follow', 'flw']
 
-favKeywords = ['fav']
+favKeywords = ['fav', 'favorite', 'like']
 
 bannedwords = ["vote"]
  
