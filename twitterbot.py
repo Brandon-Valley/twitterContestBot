@@ -1,6 +1,7 @@
 # big thanks to Robbie Barrat for writing some helpful code and github user 'timster' for optimizing a lot of rough bits
 import tweepy
 import time
+import tweetLogger
 
 
 
@@ -75,24 +76,28 @@ def knownBotSpoter(i):
     else:
         username = i.user.screen_name
     #check if OG poster is a known bot spotter
-    #print('checking if knownBotSpoter  username:', username)#!!!!!!!!!!!!!!!!!!!!
     for knownBotSpoterUsername in knownBotSpoters:
         if username == knownBotSpoterUsername:
-            #makeAfuss()#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            print('GOTCHA! -- Just spotted a knownBotSpoter:', username)#!!!!!!!!
+            print('GOTCHA! -- Just spotted a knownBotSpoter:', username)
             return True
     return False
     
     
 def search(twts):
     for i in twts:
+        #vars for tweetLogger
+        rt = False
+        flw = False
+        fav = False
+        
         if not any(k in i.text.lower() for k in rtKeywords) or any(k in i.text.lower() for k in bannedwords) or (knownBotSpoter(i)):
             continue
         # Retweets
         try:
             api.retweet(i.id)
             print ("JUST RETWEETED " + (i.text))
-            #print('TEST- i.text.lower():', i.text.lower())#!!!!!!!!!!!!!!!!!!!!!!!!!
+            rt = True
+
         except:
             print ("Hm... Something went wrong. - probably already retweeted this.")
         # Follows
@@ -106,19 +111,22 @@ def search(twts):
                 username = str(splittext[0]).replace("@", "")
                 api.create_friendship(username)
                 print ("JUST FOLLOWED " + (username))
+                flw = True
             else:
                 username = i.user.screen_name
                 api.create_friendship(username)
                 print ("JUST FOLLOWED " + str(username))
+                flw = True
             #follows 
 
         # favorites tweets if needed
         if any(k in i.text.lower() for k in favKeywords):
-           # try:#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-         api.create_favorite(i.id)
-#                 print ("JUST FAVORITED " + (i.text))
-#             except:
-#                 print('error catch -- just skipped over a "you already favorited this status" error')
+          api.create_favorite(i.id)
+          print ("JUST FAVORITED " + (i.text))
+          fav = True
+          
+        tweetLogger.logEvent(i.text, rt, flw, fav)
+          
         # waits a bit before moving onto the next one.
         time.sleep(10)#could this be 10 sec? - used to be 60 - get me suspended????
 

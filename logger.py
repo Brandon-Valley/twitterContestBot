@@ -8,26 +8,15 @@
 # logList() instead of logSingle() 
 
 import csv
+import os.path
 
-
-csvPath = r'C:\Users\Brandon\Documents\Personal Projects\twitterContestBot\tweet_log.csv' #temp, there is a better way to do this
-
-
-tweetLogDict = {'Time/Date': '11:47pm on saterday',
-                'User_Name': '@sagman',     
-                'Tweet':     'my name is sagman bardlileriownoaosnfo'}
-
-tweetLogDictList = [{'Time/Date': '11:34pm on monday',
-                     'User_Name': '@bob',     
-                     'Tweet':     'my name is bob and this is a test'},
-                    
-                    {'Time/Date': '12:35pm on tuesday',
-                     'User_Name': '@jill',     
-                     'Tweet':     'my name is jill and im the worst'}]
-
+# use this to get path
+# import os
+#   
+# full_path = os.path.realpath(__file__)
+# csvPath =  os.path.dirname(full_path) + '\\tweet_log.csv'
 
 #------------------------------------------------------PUBLIC------------------------------------------------------#
-
 
 #logs a list of dicts, each dict = one row, dict = {columb header: data}
 #ex:
@@ -38,21 +27,21 @@ tweetLogDictList = [{'Time/Date': '11:34pm on monday',
 #                     {'Time/Date': '12:35pm on tuesday',
 #                      'User_Name': '@jill',     
 #                      'Tweet':     'my name is jill and im the worst'}]
-def logList(dataDictList, csvPath):
-    #build headerList
-    headerList = []
-    for header, data in dataDictList[0].items():
-        headerList.append(header)
-        
+def logList(dataDictList, csvPath):       
     #read the csv into a list of dicts (one dict for each row)
-    csvData = readCSV(csvPath, headerList)  
+    csvData = readCSV(csvPath)  
+    
+    #check to make sure the csv's fieldnames matches the headerList, if not, create backup before overwriting
+    if not formatsMatch(dataDictList[0], csvData):
+        backup(csvData, csvPath)
+        csvData = []
      
     #add the data to be logged to the list of csv data
     for dataDict in dataDictList:
         csvData.append(dataDict) 
         
     #write it all back to the csv    
-    write2CSV(csvData)       
+    write2CSV(csvData, csvPath)       
 
 
 #should try not to use much, its not very efficient, same thing as logList() but one dict at a time
@@ -60,31 +49,33 @@ def logList(dataDictList, csvPath):
 # tweetLogDict = {'Time/Date': '11:47pm on saterday',
 #                 'User_Name': '@sagman',     
 #                 'Tweet':     'my name is sagman bardlileriownoaosnfo'}
+
 def logSingle(dataDict, csvPath):
-    #build headerList
-    headerList = []
-    for header, data in dataDict.items():
-        headerList.append(header)
-        
     #read the csv into a list of dicts (one dict for each row)
-    csvData = readCSV(csvPath, headerList)  
-     
+    csvData = readCSV(csvPath)  
+    
+    #check to make sure the csv's fieldnames matches the headerList, if not, create backup before overwriting
+    if not formatsMatch(dataDict, csvData):
+        backup(csvData, csvPath)
+        csvData = []
+        
     #add the data to be logged to the list of csv data
     csvData.append(dataDict) 
         
     #write it all back to the csv    
-    write2CSV(csvData) 
+    write2CSV(csvData, csvPath) 
 
 #------------------------------------------------------PRIVATE------------------------------------------------------#
 
-def readCSV(csvPath, headerList):
+def readCSV(csvPath):
     dataDictList = []
     
     with open(csvPath, 'rt') as csvfile:
         csvReader = csv.DictReader(csvfile)
+             
         for row in csvReader:
             rowDict = {}
-            for header in headerList:         
+            for header in csvReader.fieldnames:         
                 #convert string to dict
                 dataStr = row[header]
                 rowDict[header] = dataStr
@@ -93,7 +84,7 @@ def readCSV(csvPath, headerList):
     return dataDictList
 
 
-def write2CSV(logDictList):
+def write2CSV(logDictList, csvPath):
         with open(csvPath, 'wt') as csvfile:
             fieldnames = []
             for header, data in logDictList[0].items():
@@ -116,10 +107,46 @@ def write2CSV(logDictList):
                 #print('writing:', rowDict)
                 writer.writerow(rowDict)
         csvfile.close()
-        
-         
-logList(tweetLogDictList, csvPath)         
-logSingle(tweetLogDict, csvPath)
-         
-        
+       
+
+def backup(csvData, csvPath):
+    backupCount = 0
+    sp = csvPath.split(".")
+    backupPath = sp[0] + '_BACKUP_' + str(backupCount) + '.' + sp[1]
+    
+    while(os.path.isfile(backupPath)):
+        backupCount += 1
+        backupPath = sp[0] + '_BACKUP_' + str(backupCount) + '.' + sp[1]
+    
+    write2CSV(csvData, backupPath)
+              
+              
+def formatsMatch(dataDict, csvData):
+    #if the csv is empty, no need for a backup
+    if csvData == []:
+        return True
+    
+    for header, data in dataDict.items():
+        if header not in csvData[0]:
+            return False
+    return True
+ 
+ 
+
+tweetLogDict = {'Time/Date': '11:47pm on saterday',
+                'User_Name': '@sagman',     
+                'Tweet':     'my name is sagman bardlileriownoaosnfo'}
+ 
+tweetLogDictList = [{'Time/Date': '11:34pm on monday',
+                     'User_Name': '@bob',     
+                     'Tweet':     'my name is bob and this is a test'},
+                     
+                    {'Time/Date': '12:35pm on tuesday',
+                     'User_Name': '@jill',     
+                     'Tweet':     'my name is jill and im the worst'}] 
+          
+#logList(tweetLogDictList, csvPath)         
+#logSingle(tweetLogDict, csvPath)
+#          
+#         
         
