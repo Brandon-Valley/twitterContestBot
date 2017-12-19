@@ -13,7 +13,6 @@ def makeAfuss():
         
 #stuff to do:
 #make it follow any other user mentioned in a tweet
-#fix misc errors
 #play with timer speed
 #add ability to tag friends
 #split stuff up for multiple bot usage
@@ -27,8 +26,6 @@ def makeAfuss():
 #what happens if you aouto block anyone who retweets something from a known bot spoter ie infirior bots? - preformance increace?
 #When you establish your API instance include the wait_on_rate_limit parameter (The docs show, it defaults to False). You can also add the notify parameter so you know when you're approaching the limit. http://docs.tweepy.org/en/latest/api.html
 #look into wait_on_rate_limit
-#add ability to like - does like mean favorite?
-#how to turn on notifications??? what does this mean?????
 
 
 #enter the corresponding information from your Twitter application:

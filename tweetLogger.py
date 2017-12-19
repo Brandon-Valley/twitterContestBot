@@ -22,6 +22,6 @@ def logEvent(text, rt, flw, fav):
                  'followed':    flw,
                  'favorited':   fav}
     
-    logger.logSingle(tweetInfo, logPath)
+
 
 
