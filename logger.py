@@ -50,19 +50,21 @@ def logList(dataDictList, csvPath):
 #                 'User_Name': '@sagman',     
 #                 'Tweet':     'my name is sagman bardlileriownoaosnfo'}
 
+
 def logSingle(dataDict, csvPath):
-    #read the csv into a list of dicts (one dict for each row)
-    try: 
-        csvData = readCSV(csvPath)  
-        
-        #check to make sure the csv's fieldnames matches the headerList, if not, create backup before overwriting
-        if not formatsMatch(dataDict, csvData):
-            backup(csvData, csvPath)
-            csvData = []
-    except:
-        print('got to the except!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+    #read the csv into a list of dicts (one dict for each row) 
+    csvData = readCSV(csvPath)  
+    
+    #check to make sure the csv's fieldnames matches the headerList, if not, create backup before overwriting
+    if not formatsMatch(dataDict, csvData):
+        backup(csvData, csvPath)
         csvData = []
 
+    #make sure data wont cause a unicode error - not efficient!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    for key, data in dataDict.items():
+        if type(data) == str:
+            data = data.encode('ascii', 'ignore')
+        
     #add the data to be logged to the list of csv data
     csvData.append(dataDict) 
         
@@ -70,6 +72,7 @@ def logSingle(dataDict, csvPath):
     write2CSV(csvData, csvPath) 
 
 #------------------------------------------------------PRIVATE------------------------------------------------------#
+
 
 def readCSV(csvPath):
     dataDictList = []
@@ -89,7 +92,6 @@ def readCSV(csvPath):
 
 
 def write2CSV(logDictList, csvPath):
-    print('trying to log this shit -> csvPath:', csvPath)
     with open(csvPath, 'wt') as csvfile:
         fieldnames = []
         for header, data in logDictList[0].items():
@@ -103,14 +105,13 @@ def write2CSV(logDictList, csvPath):
         rdlPos = 0
         for logDict in logDictList:
             for header, data in logDict.items():
+                                    
                 if rowDictList == [] or rdlPos > (len(rowDictList) - 1):
                     rowDictList.append({})
                 rowDictList[rdlPos][header] = data
             rdlPos +=1
         #write rows
         for rowDict in rowDictList:
-            #print('writing:', rowDict)
-            print('trying to log this rowDict:', rowDict)#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             writer.writerow(rowDict)
     csvfile.close()
        
@@ -137,22 +138,23 @@ def formatsMatch(dataDict, csvData):
             return False
     return True
  
- 
-
-tweetLogDict = {'Time/Date': '11:47pm on saterday',
-                'User_Name': '@sagman',     
-                'Tweet':     'my name is sagman bardlileriownoaosnfo'}
- 
-tweetLogDictList = [{'Time/Date': '11:34pm on monday',
-                     'User_Name': '@bob',     
-                     'Tweet':     'my name is bob and this is a test'},
-                     
-                    {'Time/Date': '12:35pm on tuesday',
-                     'User_Name': '@jill',     
-                     'Tweet':     'my name is jill and im the worst'}] 
+# full_path = os.path.realpath(__file__)
+# csvPath =  os.path.dirname(full_path) + '\\tweet_log.csv' 
+# 
+# tweetLogDict = {'Time/Date': '11:47pm on saterday',
+#                 'User_Name': '@sagmanblablatest3',     
+#                 'Tweet':     'my name is sagman'}
+#  
+# tweetLogDictList = [{'Time/Date': '11:34pm on monday',
+#                      'User_Name': '@bob',     
+#                      'Tweet':     'my name is bob and this is a test'},
+#                      
+#                     {'Time/Date': '12:35pm on tuesday',
+#                      'User_Name': '@jill',     
+#                      'Tweet':     'my name is jill and im the worst'}] 
+#           
+# logList(tweetLogDictList, csvPath)         
+# logSingle(tweetLogDict, csvPath)
           
-#logList(tweetLogDictList, csvPath)         
-#logSingle(tweetLogDict, csvPath)
-#          
 #         
         

@@ -1,9 +1,21 @@
-microsecond,year,hour,favorited,tweet,re-tweeted,day,second,month,minute,followed
-592810,2017,2,False,"RT @nextofficial: RT to #WIN our #ShoeOfTheWeek!
-https://t.co/bTGiaVW6Vu 
-T&amp;Cs: https://t.co/jfjRu3caLL https://t.co/hocMFVWjRH",False,21,31,12,20,False
-576403,2017,2,True,"RT @Space__Between: On the eleventh day of tech-mas...
+second,tweet,year,day,followed,hour,favorited,microsecond,re-tweeted,month,minute
+21,"RT @tweetperth: RT to win an in-season double pass to @jumanjimovie!
 
-Remember: like, follow and retweet to win up to 3 entries
+JUMANJI: WELCOME TO THE JUNGLE opens this Boxing Day 26/12
 
-We will choose one lucky…",False,21,42,12,20,True
+Big thank…",2017,21,False,3,False,104498,False,12,54
+32,RT @FootballDNA_: GOALIES Competition - WIN @ReuschUK Pulse Pro A2 Aqua Goalkeeper Gloves Size 9.5. Follow @FootballDNA_ &amp; Retweet to enter…,2017,21,True,3,False,61519,False,12,54
+42,RT @EASPORTSNHL: Day 13: Retweet to win your favourite previously released HUT TOTW! #18DaysOfNhl https://t.co/l26txkESPq,2017,21,False,3,True,823405,False,12,54
+15,RT @ShoppingLinks_: One More Time! Chance to win a pair of Pretty Little Thing Leggings. Just Follow and RT to enter https://t.co/brJxMhYjgK,2017,21,True,3,False,64484,False,12,55
+26,RT @ShoppingLinks_: One More Time! Chance to win a pair of Pretty Little Thing Leggings. Just Follow and RT to enter https://t.co/brJxMhYjgK,2017,21,True,3,False,367230,False,12,55
+48,RT @PandaLiquorice: We're counting down to Christmas! Retweet to be in with a chance to #win a bag of Panda Raspberry Liquorice! UK only cl…,2017,21,False,3,False,405813,False,12,55
+58,RT @HabboPulx: PULX'S ADVENT! Follow me &amp; @CreateHabbo. Retweet to win. Winner drawn towards end of the day. You can also open amazing gift…,2017,21,True,3,False,767875,False,12,55
+9,"RT @Motor1UK: Want to bag all of this car swag? Follow us and retweet to enter our Christmas giveaway.
+
+#cars #supercar #christmas #giveawa…",2017,21,True,3,False,111362,False,12,56
+19,"RT @Motor1UK: Want to bag all of this car swag? Follow us and retweet to enter our Christmas giveaway.
+
+#cars #supercar #christmas #giveawa…",2017,21,True,3,False,484923,False,12,56
+30,RT @brajeshjee: One of the best and amazing chance to take part and win free passes worth 15000 of  #Timeout72 So people dont miss and foll…,2017,21,False,3,False,278526,False,12,56
+40,"RT @Xbox: RT for a chance to win a round-trip to Honolulu, Hawaii. NoPurchNec. Ends 1/7/18. #PUBGsweepstakes rules: https://t.co/kQyslH2RKm…",2017,21,False,3,False,282546,False,12,56
+50,RT @tafokints: Lots of people wonder where funds towards tafostats goes. Part of it will go into things such as this giveaway! RT to have a…,2017,21,False,3,False,289894,False,12,56
