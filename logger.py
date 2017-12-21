@@ -52,14 +52,19 @@ def logList(dataDictList, csvPath):
 
 
 def logSingle(dataDict, csvPath):
-    #read the csv into a list of dicts (one dict for each row) 
-    csvData = readCSV(csvPath)  
-    
-    #check to make sure the csv's fieldnames matches the headerList, if not, create backup before overwriting
-    if not formatsMatch(dataDict, csvData):
-        backup(csvData, csvPath)
+    #check if file already exists, if not, make it
+    try:#try is safer than isfile()
+        #read the csv into a list of dicts (one dict for each row) 
+        csvData = readCSV(csvPath)  
+        
+        #check to make sure the csv's fieldnames matches the headerList, if not, create backup before overwriting
+        if not formatsMatch(dataDict, csvData):
+            backup(csvData, csvPath)
+            csvData = []
+            
+    except:
         csvData = []
-
+        
     #make sure data wont cause a unicode error - not efficient!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     for key, data in dataDict.items():
         if type(data) == str:
