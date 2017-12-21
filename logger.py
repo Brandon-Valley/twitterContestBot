@@ -52,13 +52,17 @@ def logList(dataDictList, csvPath):
 
 def logSingle(dataDict, csvPath):
     #read the csv into a list of dicts (one dict for each row)
-    csvData = readCSV(csvPath)  
-    
-    #check to make sure the csv's fieldnames matches the headerList, if not, create backup before overwriting
-    if not formatsMatch(dataDict, csvData):
-        backup(csvData, csvPath)
-        csvData = []
+    try: 
+        csvData = readCSV(csvPath)  
         
+        #check to make sure the csv's fieldnames matches the headerList, if not, create backup before overwriting
+        if not formatsMatch(dataDict, csvData):
+            backup(csvData, csvPath)
+            csvData = []
+    except:
+        print('got to the except!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        csvData = []
+
     #add the data to be logged to the list of csv data
     csvData.append(dataDict) 
         
@@ -85,28 +89,30 @@ def readCSV(csvPath):
 
 
 def write2CSV(logDictList, csvPath):
-        with open(csvPath, 'wt') as csvfile:
-            fieldnames = []
-            for header, data in logDictList[0].items():
-                fieldnames.append(header)
+    print('trying to log this shit -> csvPath:', csvPath)
+    with open(csvPath, 'wt') as csvfile:
+        fieldnames = []
+        for header, data in logDictList[0].items():
+            fieldnames.append(header)
 
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames, lineterminator = '\n')
-            writer.writeheader()
-            
-            #build rowDictList
-            rowDictList = []
-            rdlPos = 0
-            for logDict in logDictList:
-                for header, data in logDict.items():
-                    if rowDictList == [] or rdlPos > (len(rowDictList) - 1):
-                        rowDictList.append({})
-                    rowDictList[rdlPos][header] = data
-                rdlPos +=1
-            #write rows
-            for rowDict in rowDictList:
-                #print('writing:', rowDict)
-                writer.writerow(rowDict)
-        csvfile.close()
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, lineterminator = '\n')
+        writer.writeheader()
+        
+        #build rowDictList
+        rowDictList = []
+        rdlPos = 0
+        for logDict in logDictList:
+            for header, data in logDict.items():
+                if rowDictList == [] or rdlPos > (len(rowDictList) - 1):
+                    rowDictList.append({})
+                rowDictList[rdlPos][header] = data
+            rdlPos +=1
+        #write rows
+        for rowDict in rowDictList:
+            #print('writing:', rowDict)
+            print('trying to log this rowDict:', rowDict)#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            writer.writerow(rowDict)
+    csvfile.close()
        
 
 def backup(csvData, csvPath):

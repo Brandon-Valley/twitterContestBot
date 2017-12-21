@@ -3,10 +3,12 @@ import logger
 import datetime
 import os
 
-full_path = os.path.realpath(__file__)
-logPath =  os.path.dirname(full_path) + '\\tweet_log.csv'
 
-def logEvent(text, rt, flw, fav):
+
+def logEvent(botID, text, rt, flw, fav):
+    full_path = os.path.realpath(__file__)
+    logPath =  os.path.dirname(full_path) + '\\tweet_logs\\' + (botID + '_tweet_log.csv')
+
     now = datetime.datetime.now()
     
     tweetInfo = {'year':        now.year,
@@ -21,6 +23,8 @@ def logEvent(text, rt, flw, fav):
                  're-tweeted':  rt,
                  'followed':    flw,
                  'favorited':   fav}
+    
+    logger.logSingle(tweetInfo, logPath)
     
 
 
