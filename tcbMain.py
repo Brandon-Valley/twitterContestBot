@@ -3,6 +3,8 @@ import os
 import tweetBot
 import logger
 
+
+
 full_path = os.path.realpath(__file__)
 credPath =  os.path.dirname(full_path) + '\\credentials.csv'
 

@@ -82,7 +82,7 @@ def logSingle(dataDict, csvPath):
 def readCSV(csvPath):
     dataDictList = []
     
-    with open(csvPath, 'rt') as csvfile:
+    with open(csvPath, 'rt', encoding='utf8') as csvfile:
         csvReader = csv.DictReader(csvfile)
              
         for row in csvReader:
@@ -97,7 +97,7 @@ def readCSV(csvPath):
 
 
 def write2CSV(logDictList, csvPath):
-    with open(csvPath, 'wt') as csvfile:
+    with open(csvPath, 'wt', encoding='utf8') as csvfile:
         fieldnames = []
         for header, data in logDictList[0].items():
             fieldnames.append(header)
