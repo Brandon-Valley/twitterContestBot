@@ -72,10 +72,9 @@ class tweetBot:
                 continue
             # Retweets
             try:
-                api.retweet(i.id)
+                self.api.retweet(i.id)
                 print ("JUST RETWEETED " + (i.text))
                 rt = True
-    
             except:
                 print ("Hm... Something went wrong. - probably already retweeted this.")
             # Follows
@@ -99,9 +98,13 @@ class tweetBot:
     
             # favorites tweets if needed
             if any(k in i.text.lower() for k in favKeywords):
-              self.api.create_favorite(i.id)
-              print ("JUST FAVORITED " + (i.text))
-              fav = True
+                self.api.create_favorite(i.id)
+                try:
+                    print ("JUST FAVORITED " + (i.text))
+                except:
+                    print('JUST FAVORITED something but there was a unicode error so I cant tell you what')
+            
+                fav = True
               
             tweetLogger.logEvent(self.id, i.text, rt, flw, fav)
               
@@ -112,9 +115,7 @@ class tweetBot:
     def run(self):
         try:
             for key in ["RT to win", "retweet to win"]:#why isnt this the same as rtKeywords?????????????
-                print ("************************")
-                print ("\n...Refreshing searched tweets...\n")
-                print ("************************")
+                print ("\n...************Refreshing searched tweets************...\n")
                 self.search(self.api.search(q=key))
         except tweepy.TweepError as e:
             if e in knownTweepyErrors:
