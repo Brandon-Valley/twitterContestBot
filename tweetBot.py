@@ -5,12 +5,6 @@ import tweetLogger
 import logger #just for testing!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-#set stuff up  GONNA NEED TO MOVE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-# auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
-# api = tweepy.API(auth)
-
-
 rtKeywords = ["rt to", "rt and win", "retweet and win",
               "rt for", "rt 4", "retweet to"]
 
@@ -37,18 +31,11 @@ class tweetBot:
         self.stopBot = False
         self.id = id
         
-#         botFollowers = 'bot_0_followers'
-#         
-#         from followers import botFollowers
-#         
-#         print(logger.readCSV)
-        
         self.CONSUMER_KEY =    credentials['CONSUMER_KEY']
         self.CONSUMER_SECRET = credentials['CONSUMER_SECRET']
         self.ACCESS_KEY =      credentials['ACCESS_KEY']
         self.ACCESS_SECRET =   credentials['ACCESS_SECRET']
-        
-        print(self.id)
+
         
         #set stuff up
         auth = tweepy.OAuthHandler(self.CONSUMER_KEY, self.CONSUMER_SECRET)
@@ -122,7 +109,7 @@ class tweetBot:
             time.sleep(10)#could this be 10 sec? - used to be 60 - get me suspended????
             
             
-    def run(self):#clean this up!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    def run(self):
         try:
             for key in ["RT to win", "retweet to win"]:#why isnt this the same as rtKeywords?????????????
                 print ("************************")
@@ -138,17 +125,16 @@ class tweetBot:
             self.run()
             
     
-    def start(self):
-        self.stopBot = False
+    def start(self, runTime):
+        startTime = time.time()
         print ("reminder -- if you run this for too long it will get your account suspended. I'd suggest using it on a 'test account'" \
               "\nand only letting it run for a short time every day.")
-        print('starting twitter bot...')
-        while self.stopBot == False:
+        print('STARTING TWITTER BOT--ID:', self.id)
+        while (time.time() - startTime) < runTime:
             self.run()
+        return self.id #this will probably be data later!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             
-            
-    def stop(self):
-        self.stopBot = True
+
         
         
         
