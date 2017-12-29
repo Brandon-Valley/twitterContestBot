@@ -1,6 +1,7 @@
 import os
 from multiprocessing.dummy import Pool as ThreadPool 
 import itertools
+import time
 
 import tweetBot
 import logger
@@ -14,7 +15,7 @@ def hour2sec(hours):
 
 #control constants
 MAX_BOT_RUNTIME = 3 #hours
-BOT_COOL_DOWN_TIME = 2 #hours
+BOT_COOL_DOWN_TIME = 4 #hours
 NUM_THREADS = 2 #what should this number be/what does it really mean?????????????????????????
 
 full_path = os.path.realpath(__file__)
@@ -51,11 +52,14 @@ for bot in botCredentials:
 #run bots
 print ("reminder -- if you run this for too long it will get your account suspended. I'd suggest using it on a 'test account'" \
       "\nand only letting it run for a short time every day.")
-runTime = hour2sec(MAX_BOT_RUNTIME)
-pool = ThreadPool(NUM_THREADS) 
-# results = pool.map(startBot, MAX_BOT_RUNTIME, bots)
-results = pool.starmap(startBot, zip(itertools.repeat(runTime), bots))
-print(results)
+while(1):
+    runTime = hour2sec(MAX_BOT_RUNTIME)
+    pool = ThreadPool(NUM_THREADS) 
+    # results = pool.map(startBot, MAX_BOT_RUNTIME, bots)
+    results = pool.starmap(startBot, zip(itertools.repeat(runTime), bots))
+    print(results)
+    print('STOPPING BOTS FOR COOLDOWN')
+    time.sleep(hour2sec(BOT_COOL_DOWN_TIME))
     
 
 

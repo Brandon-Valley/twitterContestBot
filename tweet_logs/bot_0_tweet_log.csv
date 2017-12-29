@@ -1,43 +1,55 @@
-re-tweeted,hour,microsecond,day,minute,month,favorited,tweet,username,followed,second,year
-True,13,387892,29,19,12,False,"RT @Sriracha_FG: Fancy winning a selection of our #Sriracha sauce?
+hour,month,minute,year,tweet,username,microsecond,followed,favorited,second,day,re-tweeted
+13,12,19,2017,"RT @Sriracha_FG: Fancy winning a selection of our #Sriracha sauce?
 
 FOLLOW &amp; RT to enter our festive #Competition!
 
-#FreebieFriday #Win htt…",Sriracha_FG,True,48,2017
-False,13,289820,29,19,12,False,"RT @ATLHawks: #FreebieFriday: 2 lower level tickets to our game against the Blazers tomorrow, thanks to @budweiserusa! RETWEET to enter to…",Sriracha_FG,False,59,2017
-False,13,151387,29,22,12,False,"RT @beautiwithlexi: RT TO WIN: Fenty Beauty Stunna Lip Paint
+#FreebieFriday #Win htt…",Sriracha_FG,387892,True,False,48,29,True
+13,12,19,2017,"RT @ATLHawks: #FreebieFriday: 2 lower level tickets to our game against the Blazers tomorrow, thanks to @budweiserusa! RETWEET to enter to…",Sriracha_FG,289820,False,False,59,29,False
+13,12,22,2017,"RT @beautiwithlexi: RT TO WIN: Fenty Beauty Stunna Lip Paint
 
-Must be following @beautiwithlexi to win ✨ https://t.co/frfRmv1VDc",beautiwithlexi,True,20,2017
-True,13,569793,29,22,12,False,"RT @Patriots: Stay warm &amp; RT to enter to win a 2017 Throwback On Field Knit @NewEraCap!
+Must be following @beautiwithlexi to win ✨ https://t.co/frfRmv1VDc",beautiwithlexi,151387,True,False,20,29,False
+13,12,22,2017,"RT @Patriots: Stay warm &amp; RT to enter to win a 2017 Throwback On Field Knit @NewEraCap!
 
-#PatsHatFriday rules:  https://t.co/G27OoOUZQg htt…",beautiwithlexi,False,30,2017
-False,13,311691,29,25,12,False,RT @TheeOnlyOciera: RT to win MAC’s Snow Ball Fix+ Kit &amp; Nicki Minaj x MAC The Pinkprint lipstick.💄 must be following me to be eligible. Wi…,TheeOnlyOciera,True,2,2017
-False,13,585345,29,25,12,False,"RT @jenchriistine: RT to WIN: Unlocked iPhone 8, must be following me 💕 (repost bc typo)
-extra entries if ya following my instagram https:/…",jenchriistine,True,13,2017
-False,13,229255,29,27,12,False,"RT @ReesesAndFitnes: ❄ #COMPETITION TIME ❄
+#PatsHatFriday rules:  https://t.co/G27OoOUZQg htt…",beautiwithlexi,569793,False,False,30,29,True
+13,12,25,2017,RT @TheeOnlyOciera: RT to win MAC’s Snow Ball Fix+ Kit &amp; Nicki Minaj x MAC The Pinkprint lipstick.💄 must be following me to be eligible. Wi…,TheeOnlyOciera,311691,True,False,2,29,False
+13,12,25,2017,"RT @jenchriistine: RT to WIN: Unlocked iPhone 8, must be following me 💕 (repost bc typo)
+extra entries if ya following my instagram https:/…",jenchriistine,585345,True,False,13,29,False
+13,12,27,2017,"RT @ReesesAndFitnes: ❄ #COMPETITION TIME ❄
 
-FLW/RT FOR the chance to #WIN this brilliant Cadbury’s selection 😍😍 Competition ends 8am 31.12.…",ReesesAndFitnes,True,21,2017
-True,13,487989,29,55,12,False,RT @BravesRetail: Thinking about your New Years resolution? RT for a chance to win this @UnderArmour women's gift set to kick-start your ne…,NOT_FOLLOWED,False,5,2017
-False,13,259767,29,55,12,False,"RT @MLB: Its tabletop Pinball … and we’re giving away three!
+FLW/RT FOR the chance to #WIN this brilliant Cadbury’s selection 😍😍 Competition ends 8am 31.12.…",ReesesAndFitnes,229255,True,False,21,29,False
+13,12,55,2017,RT @BravesRetail: Thinking about your New Years resolution? RT for a chance to win this @UnderArmour women's gift set to kick-start your ne…,NOT_FOLLOWED,487989,False,False,5,29,True
+13,12,55,2017,"RT @MLB: Its tabletop Pinball … and we’re giving away three!
 
-RT for your chance to win. https://t.co/qIPzIgbapT",NOT_FOLLOWED,False,16,2017
-True,13,31830,29,55,12,False,RT @aniaaniapawlak: Have you entered my Giveaway yet? Follow and Retweet to win! Winner announced on 3.01.2018! #bbloggers #beauty #win #Wi…,aniaaniapawlak,True,33,2017
-False,13,537610,29,55,12,False,RT @AMCTheatres: FOLLOW &amp; RT for your chance to win a @StarWars: #TheLastJedi @IMAX poster signed by the cast &amp; director! Get tix &amp; experie…,AMCTheatres,True,44,2017
-False,14,19923,29,24,12,False,"RT @DukeATHLETICS: 12 Days of Giveaways 🔵😈🎁
+RT for your chance to win. https://t.co/qIPzIgbapT",NOT_FOLLOWED,259767,False,False,16,29,False
+13,12,55,2017,RT @aniaaniapawlak: Have you entered my Giveaway yet? Follow and Retweet to win! Winner announced on 3.01.2018! #bbloggers #beauty #win #Wi…,aniaaniapawlak,31830,True,False,33,29,True
+13,12,55,2017,RT @AMCTheatres: FOLLOW &amp; RT for your chance to win a @StarWars: #TheLastJedi @IMAX poster signed by the cast &amp; director! Get tix &amp; experie…,AMCTheatres,537610,True,False,44,29,False
+14,12,24,2017,"RT @DukeATHLETICS: 12 Days of Giveaways 🔵😈🎁
 RT to win 🥇
 
 On the 10th day of giveaways Duke Athletics gave to me...
-A special Duke gift pack…",NOT_FOLLOWED,False,40,2017
-False,14,745881,29,44,12,False,RT @ToysRUs: We're on the hunt for #AlienVSPredator fans! RT for a chance to win our exclusive @OriginalFunko Face Hugger and Predator Dorb…,NOT_FOLLOWED,False,11,2017
-True,14,572195,29,46,12,False,"RT @HouseMusicMiami: RT for a chance to win FREE ENTRY +1 to see @mjcofficial + DIXON Saturday @clubspacemiami!
+A special Duke gift pack…",NOT_FOLLOWED,19923,False,False,40,29,False
+14,12,44,2017,RT @ToysRUs: We're on the hunt for #AlienVSPredator fans! RT for a chance to win our exclusive @OriginalFunko Face Hugger and Predator Dorb…,NOT_FOLLOWED,745881,False,False,11,29,False
+14,12,46,2017,"RT @HouseMusicMiami: RT for a chance to win FREE ENTRY +1 to see @mjcofficial + DIXON Saturday @clubspacemiami!
 
-https://t.co/cAm9xRcR82 ht…",NOT_FOLLOWED,False,10,2017
-False,14,817399,29,55,12,False,RT @AMCTheatres: FOLLOW &amp; RT for your chance to win a @StarWars: #TheLastJedi @IMAX poster signed by the cast &amp; director! Get tix &amp; experie…,AMCTheatres,False,29,2017
-False,14,706242,29,55,12,False,"RT @MAKEUPP0SI: RT to win @ABHcosmetics  subculture palette ! 
+https://t.co/cAm9xRcR82 ht…",NOT_FOLLOWED,572195,False,False,10,29,True
+14,12,55,2017,RT @AMCTheatres: FOLLOW &amp; RT for your chance to win a @StarWars: #TheLastJedi @IMAX poster signed by the cast &amp; director! Get tix &amp; experie…,AMCTheatres,817399,False,False,29,29,False
+14,12,55,2017,"RT @MAKEUPP0SI: RT to win @ABHcosmetics  subculture palette ! 
 
 💛💛💛💛💛💛
 
 ❣️MUST BE FOLLOWING US. 
 ❣️must have our notifs on 
-❣️ends at 500 f…",MAKEUPP0SI,True,40,2017
-False,14,811942,29,55,12,False,RT @BravesRetail: Thinking about your New Years resolution? RT for a chance to win this @UnderArmour women's gift set to kick-start your ne…,NOT_FOLLOWED,False,53,2017
+❣️ends at 500 f…",MAKEUPP0SI,706242,True,False,40,29,False
+14,12,55,2017,RT @BravesRetail: Thinking about your New Years resolution? RT for a chance to win this @UnderArmour women's gift set to kick-start your ne…,NOT_FOLLOWED,811942,False,False,53,29,False
+15,12,2,2017,RT @AMCTheatres: FOLLOW &amp; RT for your chance to win a @StarWars: #TheLastJedi @IMAX poster signed by the cast &amp; director! Get tix &amp; experie…,AMCTheatres,277315,False,False,57,29,False
+15,12,3,2017,"RT @CrabtreeUK: Time for #FreebieFriday! Follow &amp; RT for the chance to win yourself a Wanderlust Dream candle, worth £42. T&amp;Cs apply.",CrabtreeUK,372851,True,False,9,29,False
+15,12,6,2017,"RT @winitonline: FOLLOW @PrizeSquad &amp; RETWEET TO #WIN THIS New Sony @Playstation 4 Pro, 1TB! #PS4 #COMPETITION #GIVEAWAY Ends: 12/1/18 http…",winitonline,728236,True,False,15,29,True
+15,12,6,2017,RT @93XRadio: Want a sweet treat?  Retweet to win a cash card and coupons from @mrsfreshleys!  Pick up Mrs. Freshley’s snack cakes at any l…,NOT_FOLLOWED,755076,False,False,26,29,True
+15,12,6,2017,RT @aniaaniapawlak: Have you entered my giveaway? Follow and retweet to win! #WinItWednesday #GiveawayAlert #giveaways #win #FreebieFriday…,aniaaniapawlak,231986,False,False,51,29,True
+15,12,7,2017,"RT @CIothesPorn: RT TO WIN: MY HOLIDAY GIVEAWAY🎁 *winner will get everything pictured*
+
+(must be following me to win &amp; good luck✨) https://…",CIothesPorn,843416,True,False,2,29,False
+15,12,7,2017,RT @aniaaniapawlak: Have you entered my giveaway? Follow and retweet to win! #WinItWednesday #GiveawayAlert #giveaways #win #FreebieFriday…,aniaaniapawlak,273384,False,False,17,29,False
+15,12,8,2017,RT @HeyAprill: Follow @heyaprill and RT to win Paula's Choice Radiance Renewal Mask https://t.co/a38kK8y34m,HeyAprill,636698,True,False,5,29,True
+15,12,8,2017,RT @ToysRUs: We're on the hunt for #AlienVSPredator fans! RT for a chance to win our exclusive @OriginalFunko Face Hugger and Predator Dorb…,NOT_FOLLOWED,931603,False,False,15,29,False
+15,12,8,2017,"RT @SarahRHatch: MYSTERY ARC GIVEAWAY #2 🎉 Follow + RT for the chance to win any ARC from this pile! 🙌🏼 Open international, ends January 3…",SarahRHatch,294765,True,False,36,29,False
