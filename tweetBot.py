@@ -24,6 +24,7 @@ knownTweepyErrors = ["code': 108, 'message': 'Cannot find specified user.",
                      "'message': 'You have already favorited this status.', 'code': 139}",
                      "code': 139, 'message': 'You have already favorited this status."]
 
+MAX_FOLLOWS = 2000
 
 
 class tweetBot:
@@ -108,10 +109,15 @@ class tweetBot:
                     print (self.id + " JUST FAVORITED " + (i.text))
                 except:
                     print(self.id + ' JUST FAVORITED something but there was a unicode error so I cant tell you what')
-            
                 fav = True
-              
+             
             tweetLogger.logEvent(self.id, username, i.text, rt, flw, fav)
+            
+            if len(self.flwList) > MAX_FOLLOWS:
+                oldFollow = self.flwList.pop(0)
+                self.api.destroy_friendship(oldFollow)
+                tweetLogger.logUnfollow(self.id, oldFollow)
+                print(self.id + ' has unfollowed ' + oldFollow)
               
             # waits a bit before moving onto the next one.
             time.sleep(10)#could this be 10 sec? - used to be 60 - get me suspended????
@@ -134,8 +140,7 @@ class tweetBot:
     def start(self, runTime):
         startTime = time.time()
         print('STARTING TWITTER BOT--ID:', self.id)
-        print ("reminder -- if you run this for too long it will get your account suspended. I'd suggest using it on a 'test account'" \
-              "\nand only letting it run for a short time every day.")
+        
         while (time.time() - startTime) < runTime:
             self.run()
         return self.id #this will probably be data later!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

@@ -1,19 +1,37 @@
-month,hour,year,microsecond,favorited,tweet,re-tweeted,username,second,minute,followed,day
-12,13,2017,57823,False,"RT @beautiwithlexi: RT TO WIN: Fenty Beauty Stunna Lip Paint
+re-tweeted,hour,microsecond,day,minute,month,favorited,tweet,username,followed,second,year
+False,13,57823,29,22,12,False,"RT @beautiwithlexi: RT TO WIN: Fenty Beauty Stunna Lip Paint
 
-Must be following @beautiwithlexi to win ✨ https://t.co/frfRmv1VDc",False,beautiwithlexi,20,22,True,29
-12,13,2017,482230,False,"RT @Patriots: Stay warm &amp; RT to enter to win a 2017 Throwback On Field Knit @NewEraCap!
+Must be following @beautiwithlexi to win ✨ https://t.co/frfRmv1VDc",beautiwithlexi,True,20,2017
+True,13,482230,29,22,12,False,"RT @Patriots: Stay warm &amp; RT to enter to win a 2017 Throwback On Field Knit @NewEraCap!
 
-#PatsHatFriday rules:  https://t.co/G27OoOUZQg htt…",True,beautiwithlexi,30,22,False,29
-12,13,2017,962945,False,RT @TheeOnlyOciera: RT to win MAC’s Snow Ball Fix+ Kit &amp; Nicki Minaj x MAC The Pinkprint lipstick.💄 must be following me to be eligible. Wi…,False,TheeOnlyOciera,1,25,True,29
-12,13,2017,347177,False,"RT @jenchriistine: RT to WIN: Unlocked iPhone 8, must be following me 💕 (repost bc typo)
-extra entries if ya following my instagram https:/…",False,jenchriistine,13,25,True,29
-12,13,2017,382940,False,"RT @ReesesAndFitnes: ❄ #COMPETITION TIME ❄
+#PatsHatFriday rules:  https://t.co/G27OoOUZQg htt…",beautiwithlexi,False,30,2017
+False,13,962945,29,25,12,False,RT @TheeOnlyOciera: RT to win MAC’s Snow Ball Fix+ Kit &amp; Nicki Minaj x MAC The Pinkprint lipstick.💄 must be following me to be eligible. Wi…,TheeOnlyOciera,True,1,2017
+False,13,347177,29,25,12,False,"RT @jenchriistine: RT to WIN: Unlocked iPhone 8, must be following me 💕 (repost bc typo)
+extra entries if ya following my instagram https:/…",jenchriistine,True,13,2017
+False,13,382940,29,27,12,False,"RT @ReesesAndFitnes: ❄ #COMPETITION TIME ❄
 
-FLW/RT FOR the chance to #WIN this brilliant Cadbury’s selection 😍😍 Competition ends 8am 31.12.…",False,ReesesAndFitnes,17,27,True,29
-12,13,2017,512507,False,RT @BravesRetail: Thinking about your New Years resolution? RT for a chance to win this @UnderArmour women's gift set to kick-start your ne…,True,NOT_FOLLOWED,5,55,False,29
-12,13,2017,13065,False,"RT @MLB: Its tabletop Pinball … and we’re giving away three!
+FLW/RT FOR the chance to #WIN this brilliant Cadbury’s selection 😍😍 Competition ends 8am 31.12.…",ReesesAndFitnes,True,17,2017
+True,13,512507,29,55,12,False,RT @BravesRetail: Thinking about your New Years resolution? RT for a chance to win this @UnderArmour women's gift set to kick-start your ne…,NOT_FOLLOWED,False,5,2017
+False,13,13065,29,55,12,False,"RT @MLB: Its tabletop Pinball … and we’re giving away three!
 
-RT for your chance to win. https://t.co/qIPzIgbapT",False,NOT_FOLLOWED,16,55,False,29
-12,13,2017,375299,False,RT @aniaaniapawlak: Have you entered my Giveaway yet? Follow and Retweet to win! Winner announced on 3.01.2018! #bbloggers #beauty #win #Wi…,True,aniaaniapawlak,34,55,True,29
-12,13,2017,13194,False,RT @AMCTheatres: FOLLOW &amp; RT for your chance to win a @StarWars: #TheLastJedi @IMAX poster signed by the cast &amp; director! Get tix &amp; experie…,False,AMCTheatres,46,55,True,29
+RT for your chance to win. https://t.co/qIPzIgbapT",NOT_FOLLOWED,False,16,2017
+True,13,375299,29,55,12,False,RT @aniaaniapawlak: Have you entered my Giveaway yet? Follow and Retweet to win! Winner announced on 3.01.2018! #bbloggers #beauty #win #Wi…,aniaaniapawlak,True,34,2017
+False,13,13194,29,55,12,False,RT @AMCTheatres: FOLLOW &amp; RT for your chance to win a @StarWars: #TheLastJedi @IMAX poster signed by the cast &amp; director! Get tix &amp; experie…,AMCTheatres,True,46,2017
+False,14,57218,29,24,12,False,"RT @DukeATHLETICS: 12 Days of Giveaways 🔵😈🎁
+RT to win 🥇
+
+On the 10th day of giveaways Duke Athletics gave to me...
+A special Duke gift pack…",NOT_FOLLOWED,False,39,2017
+False,14,49799,29,45,12,False,"RT @HaliborangeUK: FLW &amp; RT to #WIN 3 months supply of Haliborange with Vit D to support bones, teeth &amp; immune system #winitwednesday https…",HaliborangeUK,True,21,2017
+True,14,547678,29,46,12,False,"RT @HouseMusicMiami: RT for a chance to win FREE ENTRY +1 to see @mjcofficial + DIXON Saturday @clubspacemiami!
+
+https://t.co/cAm9xRcR82 ht…",NOT_FOLLOWED,False,10,2017
+False,14,43854,29,55,12,False,RT @AMCTheatres: FOLLOW &amp; RT for your chance to win a @StarWars: #TheLastJedi @IMAX poster signed by the cast &amp; director! Get tix &amp; experie…,AMCTheatres,False,29,2017
+False,14,788573,29,55,12,False,"RT @MAKEUPP0SI: RT to win @ABHcosmetics  subculture palette ! 
+
+💛💛💛💛💛💛
+
+❣️MUST BE FOLLOWING US. 
+❣️must have our notifs on 
+❣️ends at 500 f…",MAKEUPP0SI,True,39,2017
+False,14,901798,29,55,12,False,RT @BravesRetail: Thinking about your New Years resolution? RT for a chance to win this @UnderArmour women's gift set to kick-start your ne…,NOT_FOLLOWED,False,52,2017

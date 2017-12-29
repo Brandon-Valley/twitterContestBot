@@ -49,6 +49,8 @@ for bot in botCredentials:
     bots.append(newBot)
     
 #run bots
+print ("reminder -- if you run this for too long it will get your account suspended. I'd suggest using it on a 'test account'" \
+      "\nand only letting it run for a short time every day.")
 runTime = hour2sec(MAX_BOT_RUNTIME)
 pool = ThreadPool(NUM_THREADS) 
 # results = pool.map(startBot, MAX_BOT_RUNTIME, bots)
