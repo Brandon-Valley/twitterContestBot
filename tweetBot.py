@@ -78,7 +78,9 @@ class tweetBot:
                 rt = True
             except:
                 print (self.id + ":  Hm... Something went wrong. - probably already retweeted this.")
+                
             # Follows
+            username = 'NOT_FOLLOWED'
             if any(k in i.text.lower() for k in followKeywords):
                 # follow the actual contest-holder, instead of some random person who retweeted their contest
                 tweet = i.text
@@ -131,9 +133,9 @@ class tweetBot:
     
     def start(self, runTime):
         startTime = time.time()
+        print('STARTING TWITTER BOT--ID:', self.id)
         print ("reminder -- if you run this for too long it will get your account suspended. I'd suggest using it on a 'test account'" \
               "\nand only letting it run for a short time every day.")
-        print('STARTING TWITTER BOT--ID:', self.id)
         while (time.time() - startTime) < runTime:
             self.run()
         return self.id #this will probably be data later!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

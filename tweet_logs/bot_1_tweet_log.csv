@@ -1,8 +1,19 @@
-re-tweeted,minute,day,second,username,month,year,microsecond,favorited,tweet,followed,hour
-True,57,29,34,CrabtreeUK,12,2017,159918,False,"RT @CrabtreeUK: Time for #FreebieFriday! Follow &amp; RT for the chance to win yourself a Wanderlust Dream candle, worth �42. T&amp;Cs apply.",True,12
-False,15,29,40,Ora_Home,12,2017,955931,False,"RT @Ora_Home: Fancy winning a YEAR'S SUPPLY of Ora?
+month,hour,year,microsecond,favorited,tweet,re-tweeted,username,second,minute,followed,day
+12,13,2017,57823,False,"RT @beautiwithlexi: RT TO WIN: Fenty Beauty Stunna Lip Paint
 
-FOLLOW &amp; RT to enter our festive #Competition!
+Must be following @beautiwithlexi to win ✨ https://t.co/frfRmv1VDc",False,beautiwithlexi,20,22,True,29
+12,13,2017,482230,False,"RT @Patriots: Stay warm &amp; RT to enter to win a 2017 Throwback On Field Knit @NewEraCap!
 
-#FreebieFriday #WIN https://t.co/FbTdZ�",True,13
-False,17,29,50,AMCTheatres,12,2017,66441,False,RT @AMCTheatres: FOLLOW &amp; RT for your chance to win a @StarWars: #TheLastJedi @IMAX poster signed by the cast &amp; director! Get tix &amp; experie�,True,13
+#PatsHatFriday rules:  https://t.co/G27OoOUZQg htt…",True,beautiwithlexi,30,22,False,29
+12,13,2017,962945,False,RT @TheeOnlyOciera: RT to win MAC’s Snow Ball Fix+ Kit &amp; Nicki Minaj x MAC The Pinkprint lipstick.💄 must be following me to be eligible. Wi…,False,TheeOnlyOciera,1,25,True,29
+12,13,2017,347177,False,"RT @jenchriistine: RT to WIN: Unlocked iPhone 8, must be following me 💕 (repost bc typo)
+extra entries if ya following my instagram https:/…",False,jenchriistine,13,25,True,29
+12,13,2017,382940,False,"RT @ReesesAndFitnes: ❄ #COMPETITION TIME ❄
+
+FLW/RT FOR the chance to #WIN this brilliant Cadbury’s selection 😍😍 Competition ends 8am 31.12.…",False,ReesesAndFitnes,17,27,True,29
+12,13,2017,512507,False,RT @BravesRetail: Thinking about your New Years resolution? RT for a chance to win this @UnderArmour women's gift set to kick-start your ne…,True,NOT_FOLLOWED,5,55,False,29
+12,13,2017,13065,False,"RT @MLB: Its tabletop Pinball … and we’re giving away three!
+
+RT for your chance to win. https://t.co/qIPzIgbapT",False,NOT_FOLLOWED,16,55,False,29
+12,13,2017,375299,False,RT @aniaaniapawlak: Have you entered my Giveaway yet? Follow and Retweet to win! Winner announced on 3.01.2018! #bbloggers #beauty #win #Wi…,True,aniaaniapawlak,34,55,True,29
+12,13,2017,13194,False,RT @AMCTheatres: FOLLOW &amp; RT for your chance to win a @StarWars: #TheLastJedi @IMAX poster signed by the cast &amp; director! Get tix &amp; experie…,False,AMCTheatres,46,55,True,29

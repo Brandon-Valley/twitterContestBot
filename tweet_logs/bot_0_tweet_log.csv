@@ -1,7 +1,25 @@
-followed,month,microsecond,re-tweeted,tweet,minute,hour,year,second,username,day,favorited
-True,12,387892,True,"RT @Sriracha_FG: Fancy winning a selection of our #Sriracha sauce?
+month,hour,year,microsecond,favorited,tweet,re-tweeted,username,second,minute,followed,day
+12,13,2017,387892,False,"RT @Sriracha_FG: Fancy winning a selection of our #Sriracha sauce?
 
 FOLLOW &amp; RT to enter our festive #Competition!
 
-#FreebieFriday #Win htt…",19,13,2017,48,Sriracha_FG,29,False
-False,12,289820,False,"RT @ATLHawks: #FreebieFriday: 2 lower level tickets to our game against the Blazers tomorrow, thanks to @budweiserusa! RETWEET to enter to…",19,13,2017,59,Sriracha_FG,29,False
+#FreebieFriday #Win htt…",True,Sriracha_FG,48,19,True,29
+12,13,2017,289820,False,"RT @ATLHawks: #FreebieFriday: 2 lower level tickets to our game against the Blazers tomorrow, thanks to @budweiserusa! RETWEET to enter to…",False,Sriracha_FG,59,19,False,29
+12,13,2017,151387,False,"RT @beautiwithlexi: RT TO WIN: Fenty Beauty Stunna Lip Paint
+
+Must be following @beautiwithlexi to win ✨ https://t.co/frfRmv1VDc",False,beautiwithlexi,20,22,True,29
+12,13,2017,569793,False,"RT @Patriots: Stay warm &amp; RT to enter to win a 2017 Throwback On Field Knit @NewEraCap!
+
+#PatsHatFriday rules:  https://t.co/G27OoOUZQg htt…",True,beautiwithlexi,30,22,False,29
+12,13,2017,311691,False,RT @TheeOnlyOciera: RT to win MAC’s Snow Ball Fix+ Kit &amp; Nicki Minaj x MAC The Pinkprint lipstick.💄 must be following me to be eligible. Wi…,False,TheeOnlyOciera,2,25,True,29
+12,13,2017,585345,False,"RT @jenchriistine: RT to WIN: Unlocked iPhone 8, must be following me 💕 (repost bc typo)
+extra entries if ya following my instagram https:/…",False,jenchriistine,13,25,True,29
+12,13,2017,229255,False,"RT @ReesesAndFitnes: ❄ #COMPETITION TIME ❄
+
+FLW/RT FOR the chance to #WIN this brilliant Cadbury’s selection 😍😍 Competition ends 8am 31.12.…",False,ReesesAndFitnes,21,27,True,29
+12,13,2017,487989,False,RT @BravesRetail: Thinking about your New Years resolution? RT for a chance to win this @UnderArmour women's gift set to kick-start your ne…,True,NOT_FOLLOWED,5,55,False,29
+12,13,2017,259767,False,"RT @MLB: Its tabletop Pinball … and we’re giving away three!
+
+RT for your chance to win. https://t.co/qIPzIgbapT",False,NOT_FOLLOWED,16,55,False,29
+12,13,2017,31830,False,RT @aniaaniapawlak: Have you entered my Giveaway yet? Follow and Retweet to win! Winner announced on 3.01.2018! #bbloggers #beauty #win #Wi…,True,aniaaniapawlak,33,55,True,29
+12,13,2017,537610,False,RT @AMCTheatres: FOLLOW &amp; RT for your chance to win a @StarWars: #TheLastJedi @IMAX poster signed by the cast &amp; director! Get tix &amp; experie…,False,AMCTheatres,44,55,True,29

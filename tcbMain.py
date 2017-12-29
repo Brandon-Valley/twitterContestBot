@@ -19,7 +19,7 @@ NUM_THREADS = 2 #what should this number be/what does it really mean????????????
 
 full_path = os.path.realpath(__file__)
 credPath =  os.path.dirname(full_path) + '\\credentials.csv'
-flwListFolderPath = os.path.dirname(full_path) + '\\follow_lists'# the way this is handled is really dumb and repeated in tweetlogger, you should change this
+flwListFolderPath = os.path.dirname(full_path) + '\\follow_lists\\'# the way this is handled is really dumb and repeated in tweetlogger, you should change this
 
 botCredentials = logger.readCSV(credPath)
 
@@ -36,11 +36,14 @@ for bot in botCredentials:
     
     #get list of users the bot follows, if csv dosnt exist, leave blank
     flwListPath = flwListFolderPath + bot['id'] + '_follow_list.csv'
+    flwList = []
+    #try to read from existing flwList
     try:
-        flwDict = logger.readCSV(flwPath)
-        flwList = flwDict['following']
+        flwDictList = logger.readCSV(flwListPath)
+        for rowDict in flwDictList:
+            flwList.append(rowDict['following'])
     except:
-        flwList = []
+        pass
     
     newBot = tweetBot.tweetBot(bot['id'], credentials, flwList)
     bots.append(newBot)
