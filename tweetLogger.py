@@ -5,9 +5,10 @@ import os
 
 
 
-def logEvent(botID, text, rt, flw, fav):
+def logEvent(botID, username, text, rt, flw, fav):
     full_path = os.path.realpath(__file__)
-    logPath =  os.path.dirname(full_path) + '\\tweet_logs\\' + (botID + '_tweet_log.csv')
+    twtLogPath =  os.path.dirname(full_path) + '\\tweet_logs\\' + (botID + '_tweet_log.csv')
+    flwLogPath =  os.path.dirname(full_path) + '\\follow_lists\\' + (botID + '_follow_list.csv')
 
     now = datetime.datetime.now()
     
@@ -19,12 +20,17 @@ def logEvent(botID, text, rt, flw, fav):
                  'second':      now.second,
                  'microsecond': now.microsecond,
                  
+                 'username':    username,
                  'tweet':       text,
                  're-tweeted':  rt,
                  'followed':    flw,
                  'favorited':   fav}
     
-    logger.logSingle(tweetInfo, logPath)
+    logger.logSingle(tweetInfo, twtLogPath)
+    
+    if flw == True:
+        flwInfo = {'following':  username}
+        logger.logSingle(flwInfo, flwLogPath)
     
 
 

@@ -124,7 +124,7 @@ def write2CSV(logDictList, csvPath):
 def backup(csvData, csvPath):
     backupCount = 0
     sp = csvPath.split(".")
-    backupPath = sp[0] + '_BACKUP_' + str(backupCount) + '.' + sp[1]
+    backupPath = '_BACKUP_' + sp[0] + '_BACKUP_' + str(backupCount) + '.' + sp[1]
     
     while(os.path.isfile(backupPath)):
         backupCount += 1

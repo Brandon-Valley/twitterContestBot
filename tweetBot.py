@@ -27,9 +27,10 @@ knownTweepyErrors = ["code': 108, 'message': 'Cannot find specified user.",
 
 
 class tweetBot:
-    def __init__(self, id, credentials):
+    def __init__(self, id, credentials, flwList):
         self.stopBot = False
         self.id = id
+        self.flwList = flwList
         
         self.CONSUMER_KEY =    credentials['CONSUMER_KEY']
         self.CONSUMER_SECRET = credentials['CONSUMER_SECRET']
@@ -73,10 +74,10 @@ class tweetBot:
             # Retweets
             try:
                 self.api.retweet(i.id)
-                print ("JUST RETWEETED " + (i.text))
+                print (self.id + " JUST RETWEETED " + (i.text))
                 rt = True
             except:
-                print ("Hm... Something went wrong. - probably already retweeted this.")
+                print (self.id + ":  Hm... Something went wrong. - probably already retweeted this.")
             # Follows
             if any(k in i.text.lower() for k in followKeywords):
                 # follow the actual contest-holder, instead of some random person who retweeted their contest
@@ -86,27 +87,29 @@ class tweetBot:
                 if tweet[0] == "@":
                     splittext = (tweet).split(":")
                     username = str(splittext[0]).replace("@", "")
+                else:
+                    username = str(i.user.screen_name)
+                    print(self.id + ' !!!!!!!!!!!!!double check that this guy got followed:' + username)
+                    
+                if username not in self.flwList:
                     self.api.create_friendship(username)
-                    print ("JUST FOLLOWED " + (username))
+                    self.flwList.append(username)
+                    print (self.id + " JUST FOLLOWED " + (username))
                     flw = True
                 else:
-                    username = i.user.screen_name
-                    self.api.create_friendship(username)
-                    print ("JUST FOLLOWED " + str(username))
-                    flw = True
-                #follows 
+                    print(self.id + ' is already following ', username)
     
             # favorites tweets if needed
             if any(k in i.text.lower() for k in favKeywords):
                 self.api.create_favorite(i.id)
                 try:
-                    print ("JUST FAVORITED " + (i.text))
+                    print (self.id + " JUST FAVORITED " + (i.text))
                 except:
-                    print('JUST FAVORITED something but there was a unicode error so I cant tell you what')
+                    print(self.id + ' JUST FAVORITED something but there was a unicode error so I cant tell you what')
             
                 fav = True
               
-            tweetLogger.logEvent(self.id, i.text, rt, flw, fav)
+            tweetLogger.logEvent(self.id, username, i.text, rt, flw, fav)
               
             # waits a bit before moving onto the next one.
             time.sleep(10)#could this be 10 sec? - used to be 60 - get me suspended????
