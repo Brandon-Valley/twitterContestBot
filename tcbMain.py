@@ -4,7 +4,7 @@ import itertools
 import time
 
 import tweetBot
-import logger
+from logger import logger
 
 
 def startBot(runTime, bot):

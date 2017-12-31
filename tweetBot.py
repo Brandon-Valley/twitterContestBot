@@ -2,7 +2,7 @@ import tweepy
 import time
 import tweetLogger
 
-import logger #just for testing!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+from logger import logger #just for testing!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 rtKeywords = ["rt to", "rt and win", "retweet and win",

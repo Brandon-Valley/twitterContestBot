@@ -1,5 +1,5 @@
 #tweetLogger #should this file be combined with something else?????
-import logger
+from logger import logger
 import datetime
 import os
 
